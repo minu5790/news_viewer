@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import NewsListBlock from './NewsListBlock';
 import NewsItem  from './NewsItem';
 import axios from 'axios';
+
 
 const NewsList = () => {
     const [news, setNews] = useState(null);
@@ -34,11 +36,11 @@ const NewsList = () => {
     }
 
     return(
-        <>
+        <NewsListBlock>
             {news.map(newsItem=>(
                 <NewsItem key={newsItem.url} article={newsItem}/>
             ))}
-        </>
+        </NewsListBlock>
     )
 }
 
