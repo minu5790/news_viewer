@@ -15,7 +15,7 @@ const NewsList = () => {
             setLoading(true);
             try{
                 const res = await axios.get(
-                    `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${news_apiKey}`
+                    `https://newsapi.org/v2/top-headlines?country=ng&apiKey=${news_apiKey}`
                 )
                 setNews(res.data.articles);
 
