@@ -2,7 +2,7 @@ import React from 'react';
 import NewsItemBlock from './NewsItemBlock';
 const NewsItem = ({article}) => {
     const {title, description, url, urlToImage} = article;
-    console.log(article)
+
     return(
         <NewsItemBlock>
             {urlToImage && (
