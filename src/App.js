@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import NewsList from './components/newsList/NewsList';
 
-function App() {
+const App=({news})=> {
 
   return (
     <>
-      <NewsList/>
+      <NewsList news={news}/>
     </>
   );
 }

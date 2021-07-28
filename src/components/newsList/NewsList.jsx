@@ -1,44 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import NewsListBlock from './NewsListBlock';
 import NewsItem  from './NewsItem';
-import axios from 'axios';
 
 
-const NewsList = () => {
-    const [news, setNews] = useState(null);
+
+const NewsList = ({news}) => {
+    const [articles, setArticles] = useState(null);
     const [loading, setLoading] = useState(false);
-
-    const news_apiKey = process.env.REACT_APP_API_KEY;
 
     useEffect(()=>{
         const fetchData = async () =>{
             setLoading(true);
-            try{
-                const res = await axios.get(
-                    `https://newsapi.org/v2/top-headlines?country=ng&apiKey=${news_apiKey}`
-                )
-                setNews(res.data.articles);
-
-            }catch(e){
-                console.log(e);
-            }
+            news.mostPopular().then(articles=>setArticles(articles));
             setLoading(false);
         }
         fetchData();
-    },[])
+    },[news])
 
     if (loading) {
         return <>대기중</>
     }
 
-    if(!news){
+    if(!articles){
         return null;
     }
 
     return(
         <NewsListBlock>
-            {news.map(newsItem=>(
-                <NewsItem key={newsItem.url} article={newsItem}/>
+            {articles.map(article=>(
+                <NewsItem key={article.url} article={article}/>
             ))}
         </NewsListBlock>
     )
