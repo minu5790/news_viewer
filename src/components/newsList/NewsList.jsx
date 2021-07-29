@@ -3,7 +3,6 @@ import NewsListBlock from './NewsListBlock';
 import NewsItem  from './NewsItem';
 
 
-
 const NewsList = ({news}) => {
     const [articles, setArticles] = useState(null);
     const [loading, setLoading] = useState(false);
