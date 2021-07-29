@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderBlock from './HeaderBlock';
 
-const Header = (props) => {
+const Header = () => {
     
     return(
         <HeaderBlock>

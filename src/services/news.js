@@ -6,7 +6,7 @@ class News {
 
     async mostPopular(){ 
         const result =await axios.get(`https://newsapi.org/v2/top-headlines?country=ng&apiKey=${this.key}`).catch(Error=>console.log(Error));
-        console.log(result)
+ 
         return result.data.articles;
     }
 
