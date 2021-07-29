@@ -4,20 +4,24 @@ const NewsItemBlock = styled.div`
 
     .thumbnail{
         margin-right: 1rem;
-        img{
+        
+        .thumbnail__img {
             display:block;
             width: 160px;
             height : 100px;
-            object-fit: cover;
+            
         }
+
     }
     .contents{
-        h2{
+        .contents__title{
             margin:0;
             a{
+                text-decoration : none;
                 color:black;
             }
         }
+
         p{
             margin:0;
             line-height:1.5;

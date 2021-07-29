@@ -8,14 +8,14 @@ const NewsItem = ({article}) => {
             {urlToImage && (
                 <div className="thumbnail">
                     <a href={url} target="_blank">
-                        <img src={urlToImage} alt="thumbnail"/>
+                        <img src={urlToImage} className="thumbnail__img" alt="thumbnail"/>
                     </a>
                 </div>
             )}
 
             <div className="contents">
-                <h2>
-                    <a href={url} target="_blank">
+                <h2 className="contents__title">
+                    <a href={url} target="_blank" alt={title}>
                         {title}
                     </a>
                 </h2>
