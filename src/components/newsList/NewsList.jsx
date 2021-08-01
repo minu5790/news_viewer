@@ -4,20 +4,20 @@ import NewsItem  from './NewsItem';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 
-const NewsList = ({news}) => {
+const NewsList = ({news,category}) => {
     const [articles, setArticles] = useState(null);
 
     useEffect(()=>{
         
         const fetchData = async () =>{
 
-            news.mostPopular().then(articles=>{
+            news.mostPopular(category).then(articles=>{
                 setArticles(articles);
             });
             
         }
         fetchData();
-    },[news])
+    },[news,category])
 
 
     return(

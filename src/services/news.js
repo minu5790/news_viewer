@@ -4,9 +4,11 @@ class News {
         this.key = key;
     }
 
-    async mostPopular(){ 
-        const result =await axios.get(`https://newsapi.org/v2/top-headlines?country=ng&apiKey=${this.key}`).catch(Error=>console.log(Error));
- 
+    async mostPopular(category){ 
+
+        const category_query = category === 'all' ? '' : `&category=${category}`;
+        const result =await axios.get(`https://newsapi.org/v2/top-headlines?country=kr${category_query}&apiKey=${this.key}`).catch(Error=>console.log(Error));
+
         return result.data.articles;
     }
 

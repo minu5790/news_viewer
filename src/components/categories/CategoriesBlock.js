@@ -21,6 +21,12 @@ const CategoriesBlock = styled.div`
             li:first-child{
                 margin : 3px 0px;
             }
+            li:hover{
+                cursor:pointer;
+            }
+            .active{
+                color:blue;
+            }
         }
 
     }
