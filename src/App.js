@@ -7,7 +7,7 @@ import NewsList from './components/newsList/NewsList';
 const App=({news})=> {
   const [category, setCategory] = useState('all');
   const onSelect = useCallback(category => setCategory(category),[]);
-  console.log(category)
+
   return (
     <>
       <Header/>

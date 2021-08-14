@@ -8,7 +8,7 @@ const NewsList = ({news,category}) => {
     const [articles, setArticles] = useState(null);
 
     useEffect(()=>{
-        
+        setArticles(null);
         const fetchData = async () =>{
 
             news.mostPopular(category).then(articles=>{
